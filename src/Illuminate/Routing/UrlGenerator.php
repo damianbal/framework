@@ -365,7 +365,7 @@ class UrlGenerator implements UrlGeneratorContract
      */
     public function route($name, $parameters = [], $absolute = true)
     {
-        if (! is_null($route = $this->routes->getByName($name))) {
+        if (! is_null($route = $this->routes->getByName(trim($name, " ")))) {
             return $this->toRoute($route, $parameters, $absolute);
         }
 
